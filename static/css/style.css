@@ -1,3 +1,63 @@
 body{
-    background-color: rgb(173, 10, 133);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; 
+    background: linear-gradient(270.61deg, #5EDD66 0.52%, #A0E59B 70.64%, #FFFFFF 90.72%);
+}
+.logo-quitroca {
+    background-image: url(logo-quitroca.png);
+    width: 550px;
+    height: 430px;
+    top: 110px;
+    left: 120px;
+    position: relative;
+    background-size: 100% 100%; 
+    background-position: center;
+}
+.elipse-1 {
+    position: absolute;
+    width: 277.15px;
+    height: 236.25px;
+    top: -60px; 
+    left: -100px; 
+    border-radius: 50%; 
+    transform: rotate(2.12deg);
+    background: linear-gradient(180deg, #03F993 20.03%, #029357 120.03%);
+}
+.elipse-2 {
+    position: absolute;
+    width: 270.65px;
+    height: 240.48px;
+    bottom: -60px;
+    right: -100px;
+    border-radius: 50%;
+    transform: rotate(10.12deg); 
+    background: linear-gradient(180deg, #BCA0E8 0%, #695A82 100%);
+}
+.elipse-3{
+    position: absolute;
+    width: 105.16px;
+    height: 92.97px;
+    bottom: 20%;
+    left: 240px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #78A63C 34%, #2E4017 100%);
+}
+.botao-entrar {
+    position: absolute;
+    width: 150.01px; 
+    height: 56.65px; 
+    top: 500px; 
+    left: 900px;
+    border-radius: 100px; 
+    background: #b287f8a6;
+    cursor: pointer; 
+    color: black; 
+    font-size: 20px; 
+    font-weight: bold; 
+    border: 2px solid #9860f3a6; 
+}
+.botao-entrar:hover {
+    background-color: #9860f3a6;
 }
