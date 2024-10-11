@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url "add" %}">Salvar</a>
+    </nav>
+    <h1>laizi, vini e victro simpática e humilde</h1>
+    {% for item in listagem %}
+    <section>
+        <h2>{{item.nome}} {{item.validade}}</h2>
+        <a href="{% url "show" item.id %}"> exibir </a>
+    </section>
+    {% endfor %}
+</body>
+</html>

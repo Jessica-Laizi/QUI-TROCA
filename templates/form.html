@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cadastrar novo usuário</h1>
+    <form action="{% url "save" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="txtNome">Nome</label>
+            <input type="text" name="nome" id="txtNome">
+        </div>
+        <div>
+            <label for="txtValidade">validade</label>
+            <input type="text" name="validade" id="txtValidade">
+        </div>
+        <div>
+            <label for="txtQuantidade">quantidade</label>
+            <input type="text" name="quantidade" id="txtQuantidade">
+        </div>
+        <div>
+            <label for="txtDisponivel">disponivel</label>
+            <input type="text" name="disponivel" id="txtDisponivel">
+        </div>
+        <div>
+            <label for="txtDescricao">descrição</label>
+            <input type="text" name="descricao" id="txtDescricao">
+        </div>
+        <div>
+            <label for="txtMarca">marca</label>
+            <input type="text" name="marca" id="txtMarca">
+        </div>
+        <div>
+            <label for="txtEstado_de_uso">estado de uso</label>
+            <input type="text" name="estado_de_uso" id="txtEstado_de_uso">
+        </div>
+        <div>
+            <label for="txtImagem">imagem</label>
+            <input type="file" name="imagem" id="txtImagem">
+        </div>
+        <input type="submit" value="Salvar">
+
+
+
+    </form> 
+    
+</body>
+</html>
