@@ -39,5 +39,9 @@ def delete(request, id):
      inv=Inventario.objects.get(pk=id)
      inv.delete()
      return redirect(index)
+
+def perfil(request):
+    usuario = request.user
+    return render(request, "perfil.html", {"usuario":usuario})
     
     
