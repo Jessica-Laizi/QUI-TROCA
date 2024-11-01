@@ -7,23 +7,28 @@
     <title>QUI-TROCA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script src="{% static "js/exibir_senha.js"%}" defer></script>
 </head>
 <body>
-    <nav>
-    </nav>
-    <main>
-        <div class = "logo-quitroca"></div>
-        <section class = "elipse-1"></section>
-        <section class = "elipse-2"></section>
-        <section class = "elipse-3"></section>
-
-        <ul class ="flex">
-            <li><i class="fa-solid fa-user"></i><input type="text" placeholder="USUÁRIO"></li>
-            <li><i class="fa-solid fa-lock"></i><input type="password" placeholder="SENHA"></li>
-            <li><i class="fa-solid fa-book-open"></i><input type="text" placeholder="CAMPUS"></li>
-        </ul>
         
-        <button class="botao-entrar">ENTRAR</button>
+    <div class = "elipse-1"></div>
+    <div class = "elipse-2"></div>
+    <div class = "elipse-3"></div>
+    <main class="flex login">
+        <div class = "logo-quitroca"></div>
+        <form action="">
+            <div class = "campos">
+                <label for="usuario"><i class="fas fa-user"></i></label>
+                <input type="text" id="usuario" placeholder= "USUÁRIO" autofocus>
+            </div>
+            <div class = "campos">
+                <label for="senha"><i class="fas fa-lock"></i></label>
+                <input type="password" id="senha" placeholder="SENHA">
+                <i class="fa-solid fa-eye" id= "olho" ></i>
+            </div>
+            
+            <button class="botao-entrar" type="submit">ENTRAR</button>
+        </form>
     </main>
 </body>
 </html>

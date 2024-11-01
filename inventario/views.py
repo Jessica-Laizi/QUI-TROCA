@@ -8,8 +8,11 @@ from pathlib import os
 # Create your views here.
 
 def index(request):
+    return render(request, "index.html")
+
+def listagem(request):
     listagem=Inventario.objects.all()
-    return render(request, "index.html", {'listagem':listagem})
+    return render(request,  "listagem.html", {'listagem':listagem})
 
 def add(request):
     return render(request, "form.html")
