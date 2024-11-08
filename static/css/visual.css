@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.categoria {
+    
+    cursor: pointer;  
+                                       
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    /* background-color: #ccc;  */
+    /* width: 140px; 
+    height: 140px;  */
+    /* border-radius: 100%;  */
+    cursor: pointer; 
+    margin: 0 10px; 
+    }    
+    
+.categoria .img{
+    background-color: #ccc;
+    padding-top: 30px; 
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    text-align: center;
+}
+.categoria-nome { margin-top: 10px; font-size: 16px; text-align: center; color: #333; 
+
+
+}
+
+.categoria:hover .img {
+    background-color: #bbb;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.campus-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.campus {
+    background-color: #6ac36a;
+    padding: 70px 170px;
+    border-radius: 0px 0px 0px 0px;
+    cursor: pointer;
+    color: white;
+    width: 375px;
+    height: 168px;
+    top: 561px;
+    left: 66px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+.campus:hover {
+    background-color: #58a658;
+}
+
+.itens-disponiveis {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Koulen;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.item {
+    background-color: #9779eb8e;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    width: 317px;
+    height: 452px;
+    top: 956px;
+    left: 384px;
+    gap: 0px;
+    border-radius: 30px;
+    opacity: 0px;
+
+}
+
+.item img {
+    width: 260px;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    margin-bottom: 5px;
+}

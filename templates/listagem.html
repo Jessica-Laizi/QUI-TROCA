@@ -1,22 +1,70 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>Gestão de Laboratórios</title>
+    <link rel="stylesheet" href="{% static "css/visual.css" %}">
+    <link rel="icon" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=experiment" />
 </head>
 <body>
-    <nav>
-        <a href="{% url "add" %}">Salvar</a>
-    </nav>
-    <h1>QUI-TROCA</h1>
-    {% for item in listagem %}
+    <header>
+        <h1>Selecione por Categoria</h1>
+        <div class="categorias">
+            <div class="categoria">
+                <div class="img">
+                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
+                </div>
+                <p>Vidrarias</p>
+            </div>
+                
+            <div class="categoria">Balanças</div>
+            <div class="categoria">Agitadores</div>
+            <div class="categoria">Bombas</div>
+            <div class="categoria">Reagentes</div>
+            <div class="categoria">Buretas</div>
+        </div>
+    </header>
+
     <section>
-        <h2>{{item.nome}} {{item.validade}}</h2>
-        <a href="{% url "show" item.id %}"> exibir </a>
+        <h2>Selecione por Campus</h2>
+        <div class="campus-container">
+            <div class="campus">Santa Cruz</div>
+                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
+            <div class="campus">Apodi</div>
+                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
+            <div class="campus">Parnamirim</div>
+                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
+            <div class="campus">Lajes</div>
+                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
+        </div>
     </section>
-    {% endfor %}
+
+    <section>
+        <h2>Disponível no seu Campus</h2>
+        <div class="itens-disponiveis">
+            <div class="item">
+                <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
+                <p>Becker 250 ml</p>
+                <p>Disponível para troca</p>
+            </div>
+            <div class="item">
+                <img src="{% static "img/becker.webp" alt="Erlenmeyer 500 ml" %}">
+                <p>Erlenmeyer 500 ml</p>
+                <p>Disponível para troca</p>
+            </div>
+            <div class="item">
+                <img src="{% static "img/becker.webp" alt="Balão Volumétrico 50 ml" %}">
+                <p>Balão Volumétrico 50 ml</p>
+                <p>Disponível para troca</p>
+            </div>
+            <div class="item">
+                <img src="{% static "img/becker.webp" alt="Tubo de Ensaio" %}">
+                <p>Tubo de Ensaio</p>
+                <p>Disponível para troca</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
