@@ -1,11 +1,40 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>{{usuario.username}}</h1>
-    </body>
-    </html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/perfil.css" %}">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile-section">
+        <div class="profile-pic"></div>
+        <h2>Victor Souza</h2>
+        <a href="#" class="profile-link">Meu Perfil</a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Itens do seu Campus</a></li>
+          <li><a href="#">Itens Salvos</a></li>
+          <li><a href="#" class="logout">Sair</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+    
+      <div class="info">
+        <p><strong>Nome: <br></br></strong> Victor Gabriel Maia de Souza</p>
+        <p><strong>Ingresso:<br></br></strong> 2022/1</p>
+        <p><strong>Matrícula:<br></br></strong> 20221114010004</p>
+        <p><strong>Email Acadêmico:<br></br></strong> maia.victor@academico.ifrn.edu.br</p>
+        <p><strong>Campus:<br></br></strong> Santa Cruz</p>
+        <p><strong>Status do usuário:<br></br></strong> Discente</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
