@@ -16,14 +16,15 @@
     <div class = "elipse-3"></div>
     <main class="flex login">
         <div class = "logo-quitroca"></div>
-        <form action="">
+        <form action="{% url "admin:login" %}" method = "POST">
+            {% csrf_token %}
             <div class = "campos">
                 <label for="usuario"><i class="fas fa-user"></i></label>
-                <input type="text" id="usuario" placeholder= "USUÁRIO" autofocus>
+                <input type="text" id="usuario" placeholder= "USUÁRIO" name = "username" autofocus>
             </div>
             <div class = "campos">
                 <label for="senha"><i class="fas fa-lock"></i></label>
-                <input type="password" id="senha" placeholder="SENHA">
+                <input type="password" id="senha" placeholder="SENHA" name = "password">
                 <i class="fa-solid fa-eye" id= "olho" ></i>
             </div>
             

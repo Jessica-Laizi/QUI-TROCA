@@ -20,7 +20,7 @@ from inventario.views import index, add,save, show, delete, perfil, listagem
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index, name = "login"), 
     path('form/', add, name="add"),
     path('form/save', save, name="save"),
     path('show/<int:id>', show, name="show"),
