@@ -19,6 +19,7 @@ header h1 {
     display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
+   
 }
 
 .categoria {
@@ -61,26 +62,36 @@ section h2 {
 
 .campus-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin-bottom: 30px;
+    overflow:scroll hidden;
+
 }
 
 .campus {
+    display: inline-block;
+    vertical-align: top;
     background-color: #6ac36a;
     padding: 70px 170px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     cursor: pointer;
     color: white;
     width: 375px;
     height: 168px;
-    top: 561px;
-    left: 66px;
-    gap: 0px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
+    position: relative;
 
 }
-
+.campus img{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+}
+.campus span {
+    position: relative;
+z-index: 99;
+}
 .campus:hover {
     background-color: #58a658;
 }
