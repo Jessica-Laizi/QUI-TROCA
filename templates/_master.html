@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/detalhes.css" %}">
+
+</head>
+
+<body>
+    {% comment %} <div class="logo"> {% endcomment %}
+        <header class= "container">
+            <a href="{% url "inicial" %}">
+                <img src="{% static "img/logo-quitroca.png" %}" alt="logo quitroca">
+            </a>
+            <div class="busca">
+                <input type="text" placeholder="Buscar Item">
+                <div class = "iconBusca">
+                <div class='fa fa-search'></div>
+                </div>
+            </div>
+
+
+            <div class="icons">
+                <div>
+                    <a href="{% url "inicial" %}" class="fa fa-home no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fas fa-sync-alt no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fa fa-bell no-decoration"></a>
+                    <a href="{% url "perfil" %}" class="fa fa-user no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fa fa-headset no-decoration"></a>
+                </div>
+            </div>
+
+
+        </header>
+
+
+       
+
+
+
+        <main class="container">
+            {% block main %}{% endblock main %}
+
+        </main>
+    {% comment %} </div> {% endcomment %}
+
+
+</body>
+
+
+</html>
+

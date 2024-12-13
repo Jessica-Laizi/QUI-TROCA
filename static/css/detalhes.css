@@ -8,13 +8,13 @@ body {
 
 
 
-.logo {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 20px;
 }
-.logo img {
+.container img {
     height: 3em;
 }
 
