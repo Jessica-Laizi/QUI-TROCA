@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/detalhes.css" %}">
+
+</head>
+
+<body>
+    <div class="logo">
+        <header>
+            <img src="{% static "img/logo-quitroca.png" %}" alt="logo quitroca">
+            <div class="busca">
+                <input type="text" placeholder="Buscar Item">
+                <div class = "iconBusca">
+                <div class='fa fa-search'></div>
+                </div>
+            </div>
+
+
+            <div class="icons">
+                <ul>
+                    <li class="fa fa-home"></li>
+                    <li class="fas fa-sync-alt"></li>
+                    <li class="fa fa-bell"></li>
+                    <li class="fa fa-user"></li>
+                    <li class="fa fa-headset"></li>
+                </ul>
+            </div>
+
+
+        </header>
+
+
+       
+        <div class = "seta">
+            <a class="fa fa-arrow-left"></a>
+        </div>
+
+
+        <main>
+            <div class="imagem">
+                <div class="imagem2">
+                    <div class="imagem-icons">
+                        <img src="{% static "img/recipiente.png" %}" alt="icon.png">
+                        <img src="{% static "img/recipiente.png" %}" alt="icon.png">
+                    </div>
+
+
+
+
+                    <img src="{% static "img/recipiente.png" %}" alt="Copo Becker de Vidro" class = "img">
+
+
+                </div>
+
+
+                <div class="quantidades">
+
+
+                    <div class="quantidades-troca">
+                        <p>QUANTIDADES PARA TROCAS</p>
+                        <span>5</span>
+                    </div>
+
+
+
+
+                    <div class="quantidades-disp">
+                        <p>QUANTIDADES DISPONÍVEIS</p>
+                        <span>10</span>
+                    </div>
+                </div>
+
+
+
+
+                 
+            </div>
+            <div class="detalhes-produto">
+                <h1>Copo Becker de Vidro</h1>
+                <h1>250ml (1un)</h1>
+                <p1>É recomendado para experimentos e misturas.</p1>
+
+
+                <div class="descricao-produto">
+                    <h3>Descrição do produto</h3>
+                    <div class= "texto">
+                    <p>Autoclavável a 121°C, espessura de parede uniforme ideal para aplicações com aquecimento, fundo
+                        totalmente plano ideal para utilização com agitadores magnéticos, acabamento superior.</p>
+                    </div>
+                </div>
+
+
+                <div class="botoes">
+                    <button>Trocar</button>
+                    <button>Salvar</button>
+                    <button>Negociar</button>
+                </div>
+
+
+
+
+                <div class="informacoes-produto">
+                    <h3>Informações do produto</h3>
+                   <div class= "texto2">
+                    <p>MARCA: Plena-Lab</p>
+                    <p>ID: 12345678</p>
+                    <p>CAMPUS DE ORIGEM: Campus Santa Cruz</p>
+                    <p>ESTADO DE USO: Danificado (Trincado na base)</p>
+                   </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+
+</html>
+

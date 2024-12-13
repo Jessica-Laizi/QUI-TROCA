@@ -44,4 +44,7 @@ def perfil(request):
     usuario = request.user
     return render(request, "perfil.html", {"usuario":usuario})
     
-    
+        
+def details(request, id):
+    inv=Inventario.objects.get(pk=id)
+    return render(request, "detalhes.html", {"inv": inv})
