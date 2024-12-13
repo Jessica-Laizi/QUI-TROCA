@@ -15,7 +15,9 @@
 <body>
     <div class="logo">
         <header>
-            <img src="{% static "img/logo-quitroca.png" %}" alt="logo quitroca">
+            <a href="{% url "inicial" %}">
+                <img src="{% static "img/logo-quitroca.png" %}" alt="logo quitroca">
+            </a>
             <div class="busca">
                 <input type="text" placeholder="Buscar Item">
                 <div class = "iconBusca">
@@ -25,13 +27,13 @@
 
 
             <div class="icons">
-                <ul>
-                    <li class="fa fa-home"></li>
-                    <li class="fas fa-sync-alt"></li>
-                    <li class="fa fa-bell"></li>
-                    <li class="fa fa-user"></li>
-                    <li class="fa fa-headset"></li>
-                </ul>
+                <div>
+                    <a href="{% url "inicial" %}" class="fa fa-home no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fas fa-sync-alt no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fa fa-bell no-decoration"></a>
+                    <a href="{% url "perfil" %}" class="fa fa-user no-decoration"></a>
+                    <a href="{% url "inicial" %}" class="fa fa-headset no-decoration"></a>
+                </div>
             </div>
 
 

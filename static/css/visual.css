@@ -123,6 +123,9 @@ z-index: 99;
 
 }
 
+.no-decoration {
+    text-decoration: none;
+}
 .item img {
     width: 260px;
     height: auto;

@@ -60,9 +60,11 @@ header input[type="text"] {
 }
 
 
+.no-decoration {
+    text-decoration: none;
+}
 
-
-.icons ul {
+.icons div {
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -71,9 +73,11 @@ header input[type="text"] {
 
 
 
-.icons ul li {
+.icons div a {
     margin-left: 20px;
     font-size: 20px;
+    display: inline-block;
+    color: #000000;
 }
 
 
