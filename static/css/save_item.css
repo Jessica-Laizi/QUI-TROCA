@@ -1,8 +1,13 @@
 
+ 
   /* Container principal */
-  form {
+form {
     background-color: #fff;
-    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
   }
   
   h1 {
@@ -10,6 +15,14 @@
     font-size: 45px;
     margin-bottom: 20px;
     color: #000000;
+    width: 100%; /* Mantém o título no topo ocupando toda a largura */
+    margin-bottom: 70px;
+    margin-top: 0px;
+  }
+  
+  /* Seção esquerda e direita do formulário */
+  .lado_esquerdo, .lado_direito {
+    width: 45%;
   }
   
   /* Estilo dos campos do formulário */
@@ -17,16 +30,17 @@
     display: block;
     font-size: 17px;
     margin-bottom: 5px;
-    color:  #000000;
+    color: #000000;
     font-weight: bold;
   }
   
   input[type="text"], textarea, select {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-color: #000000;
     font-size: 14px;
     box-sizing: border-box;
   }
@@ -47,9 +61,9 @@
     margin-right: 5px;
   }
   
- 
+  /* Botão de envio */
   button {
-    width: 10%;
+    width: 15%;
     background-color: #BCA0E8;
     color: white;
     border: none;
@@ -63,3 +77,26 @@
   button:hover {
     background-color: #9e74e0;
   }
+  
+  /* Ajusta alinhamento de cada seção */
+  .lado_esquerdo {
+    align-items: flex-start;
+  }
+  
+  .lado_direito {
+    align-items: flex-end;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  label.inline {
+    display: inline-block; /* Mantém os itens em linha */
+    margin-right: 15px; /* Espaçamento entre as opções */
+  }
+
+  .campos{
+    margin-top: 20px;
+  }
+  
