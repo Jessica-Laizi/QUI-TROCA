@@ -1,40 +1,96 @@
+{% extends "_master.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{% static "css/perfil.css" %}">
-</head>
-<body>
-  <div class="container">
+{% block main %}
+
+ 
+  <div class="completo">
     <aside class="sidebar">
       <div class="profile-section">
-        <div class="profile-pic"></div>
+        
+        <div class="foto_perfil">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        
         <h2>Victor Souza</h2>
         <a href="#" class="profile-link">Meu Perfil</a>
-      </div>
+  </div>
+     
       <nav class="menu">
         <ul>
-          <li><a href="#">Itens do seu Campus</a></li>
-          <li><a href="#">Itens Salvos</a></li>
-          <li><a href="#" class="logout">Sair</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> ITENS DO SEU CAMPUS</a></li>
+          <li><a href="#"><i class="fa-solid fa-bookmark"></i> ITENS SALVOS</a></li>
+          <li><a href="#" class="sair"><i class="fa-solid fa-right-from-bracket"></i> SAIR</a></li>
         </ul>
       </nav>
+   
     </aside>
-    <main class="content">
-    
-      <div class="info">
-        <p><strong>Nome: <br></br></strong> Victor Gabriel Maia de Souza</p>
-        <p><strong>Ingresso:<br></br></strong> 2022/1</p>
-        <p><strong>Matrícula:<br></br></strong> 20221114010004</p>
-        <p><strong>Email Acadêmico:<br></br></strong> maia.victor@academico.ifrn.edu.br</p>
-        <p><strong>Campus:<br></br></strong> Santa Cruz</p>
-        <p><strong>Status do usuário:<br></br></strong> Discente</p>
+   
+   <div class="content">
+        <div class="info">
+          <label>Nome:</label>
+        </div>
+
+
+
+
+        <div class = "info_user">
+          <label>{{request.user.username}}</label>
+        </div>
+       
+        <div class="info">
+        <label>Ingresso:</label>
+        </div>
+
+
+
+
+        <div class = "info_user">
+        <label>2022/1</label>
+        </div>
+       
+        <div class="info">
+        <label>Matrícula:</label>
+        </div>
+
+
+
+
+        <div class = "info_user">
+        <label>20221114010004</label>
+        </div>
+       
+        <div class="info">
+        <label>Email Acadêmico:</label>
+        </div>
+       
+        <div class = "info_user">
+        <label>maia.victor@academico.ifrn.edu.br</label>
+        </div>
+       
+        <div class="info">
+        <label>Campus:</label>
+        </div>
+
+
+
+
+        <div class = "info_user">
+        <label>Santa Cruz</label>
+        </div>
+
+
+
+
+        <div class="info">
+        <label>Status do usuário:</label>
+        </div>
+       
+        <div class = "info_user">
+        <label>Discente</label>
+        </div>
+       
       </div>
-    </main>
-  </div>
-</body>
-</html>
+
+    </div>
+    
+{% endblock  %}

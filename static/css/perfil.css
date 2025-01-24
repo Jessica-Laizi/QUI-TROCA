@@ -1,86 +1,104 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
-  
-  .container {
+.completo * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.completo {
+    width: 100%;
+    margin: -20px;
+    background-color: #ffffff;
     display: flex;
-    min-height: 100vh;
-  }
   
-  .sidebar {
-    width: 500px;
-    background-color: #5EDD66; /* Verde */
-    color: black;
-    padding: 20px;
-  }
-  
-  .profile-section {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .profile-pic {
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-  }
-  
-  .profile-section h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .profile-link {
-    color: #d8b4fe; /* Roxo claro */
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .menu ul {
-    list-style: none;
-  }
-  
-  .menu li {
-    margin: 20px 0;
-  }
-  
-  .menu a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 28px;
-  }
-  
-  .menu .logout {
-    color: red;
-  }
-  
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .content h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .info p {
-    margin-bottom: 40px;
-    font-size: 28px;
-  }
-  
-  .info strong {
-    color: rgb(90, 88, 88);
-  }
-  
+}
+
+
+.sidebar {
+  width: 650px;
+  background-color: #5EDD66;
+  color: black;
+  padding: 20px;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.foto_perfil {
+  width: 130px;
+  height: 130px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px auto;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 120px;
+  display: block;
+}
+
+.profile-section h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.profile-link {
+  font-size: 25px;
+  color: #c393f7;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu ul {
+  list-style: none;
+}
+.menu li {
+  margin: 20px 0;
+}
+
+.menu a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  margin-top: -1em;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid  rgb(221, 215, 215);
+}
+.menu  i{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding-left: .62em;
+  padding-top: 13px;
+  padding-bottom: 20px;
+   margin-top: -1em;
+}
+.menu .sair {
+  color: red;
+}
+.content {
+  padding-left: 20px;
+  width: 100%;
+}
+.info>label {
+  color: rgb(90, 88, 88);
+  margin-top: 1.5em;
+  display: inline-block;
+  font-size: 30px;
+  font-weight:bold;
+}
+.info_user>label{
+  color: black;
+  display:block;
+  margin-top: .3em;
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid  rgb(221, 215, 215); 
+}
