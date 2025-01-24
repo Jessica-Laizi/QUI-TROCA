@@ -48,3 +48,6 @@ def perfil(request):
 def details(request, id):
     inv=Inventario.objects.get(pk=id)
     return render(request, "detalhes.html", {"inv": inv})
+
+def save_item(request):
+    return render(request, "cadastro_itens.html")
