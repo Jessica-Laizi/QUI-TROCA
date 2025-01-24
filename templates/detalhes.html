@@ -4,14 +4,17 @@
 <div class="imagem">
     <div class="imagem2">
         <div class="imagem-icons">
-            <img src="{% static "img/recipiente.png" %}" alt="icon.png">
-            <img src="{% static "img/recipiente.png" %}" alt="icon.png">
+            {% comment %} <img src="{% static "img/recipiente.png" %}" alt="icon.png"> {% endcomment %}
+            <img src={{inv.imagem}}>
+            {% comment %} <img src="{% static "img/recipiente.png" %}" alt="icon.png"> {% endcomment %}
+            <img src={{inv.imagem}}>
         </div>
 
 
 
 
-        <img src="{% static "img/recipiente.png" %}" alt="Copo Becker de Vidro" class = "img">
+        {% comment %} <img src="{% static "img/recipiente.png" %}" alt="Copo Becker de Vidro" class = "img"> {% endcomment %}
+        <img src={{inv.imagem}}>
 
 
     </div>
@@ -22,7 +25,7 @@
 
         <div class="quantidades-troca">
             <p>QUANTIDADES PARA TROCAS</p>
-            <span>5</span>
+            <span>{{inv.quantidade}}</span>
         </div>
 
 
@@ -30,7 +33,7 @@
 
         <div class="quantidades-disp">
             <p>QUANTIDADES DISPONÍVEIS</p>
-            <span>10</span>
+            <span>{{inv.quantidade}}</span>
         </div>
     </div>
 
@@ -40,16 +43,14 @@
      
 </div>
 <div class="detalhes-produto">
-    <h1>Copo Becker de Vidro</h1>
-    <h1>250ml (1un)</h1>
-    <p1>É recomendado para experimentos e misturas.</p1>
+    <h1>{{inv.nome}}</h1>
+    <h1>250ml ({{inv.quantidade}}un)</h1>
 
 
     <div class="descricao-produto">
         <h3>Descrição do produto</h3>
         <div class= "texto">
-        <p>Autoclavável a 121°C, espessura de parede uniforme ideal para aplicações com aquecimento, fundo
-            totalmente plano ideal para utilização com agitadores magnéticos, acabamento superior.</p>
+        <p>{{inv.descricao}}</p>
         </div>
     </div>
 
@@ -66,10 +67,10 @@
     <div class="informacoes-produto">
         <h3>Informações do produto</h3>
        <div class= "texto2">
-        <p>MARCA: Plena-Lab</p>
-        <p>ID: 12345678</p>
-        <p>CAMPUS DE ORIGEM: Campus Santa Cruz</p>
-        <p>ESTADO DE USO: Danificado (Trincado na base)</p>
+        <p>MARCA: {{inv.marca}}</p>
+        <p>ID: {{inv.id}}</p>
+        <p>CAMPUS DE ORIGEM: {{inv.campus.campus}}</p>
+        <p>ESTADO DE USO: {{inv.estado_de_uso}}</p>
        </div>
     </div>
 </div>
