@@ -5,10 +5,10 @@
     <form>
       <h1>Cadastro Itens</h1>
         <div class = "lado_esquerdo">
-    
+          <div class = "campos">
       <label for="nome">NOME DO ITEM:</label>
       <input type="text" id="nome" name="nome" placeholder="Digite o nome do item" required>
-    
+    </div>
             
     <div class = "campos">
       <label for="descricao">DESCRIÇÃO:</label>
@@ -21,12 +21,14 @@
     </div>
       </div> 
       <div class = "lado_direito">
+        <div class = "campos">
       <label for="estado">ESTADO DE USO:</label>
       <select id="estado" name="estado">
         <option value=""disabled selected>Selecione uma opção</option>
         <option value="novo">NOVO</option>
         <option value="usado">USADO</option>
       </select>
+    </div> 
       
       <div class = "campos">
       <label for="quantidade">QUANTIDADE:</label>

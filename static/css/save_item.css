@@ -1,102 +1,114 @@
-
- 
-  /* Container principal */
+/* Container principal */
 form {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
-    width: 100%;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 20px;
-    color: #000000;
-    width: 100%; /* Mantém o título no topo ocupando toda a largura */
-    margin-bottom: 70px;
-    margin-top: 0px;
-  }
-  
-  /* Seção esquerda e direita do formulário */
-  .lado_esquerdo, .lado_direito {
-    width: 45%;
-  }
-  
-  /* Estilo dos campos do formulário */
-  label {
-    display: block;
-    font-size: 17px;
-    margin-bottom: 5px;
-    color: #000000;
-    font-weight: bold;
-  }
-  
-  input[type="text"], textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    border-color: #000000;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  /* Estilo do botão de upload */
-  input[type="file"] {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  /* Estilo para opções "Disponível" */
-  input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  /* Botão de envio */
-  button {
-    width: 15%;
-    background-color: #BCA0E8;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #9e74e0;
-  }
-  
-  /* Ajusta alinhamento de cada seção */
-  .lado_esquerdo {
-    align-items: flex-start;
-  }
-  
-  .lado_direito {
-    align-items: flex-end;
-  }
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+}
 
-  input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  label.inline {
-    display: inline-block; /* Mantém os itens em linha */
-    margin-right: 15px; /* Espaçamento entre as opções */
-  }
+h1 {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #000000;
+  width: 100%; /* Mantém o título no topo ocupando toda a largura */
+  margin-bottom: 70px;
+  margin-top: 0px;
+}
 
-  .campos{
-    margin-top: 20px;
-  }
-  
+/* Seção esquerda e direita do formulário */
+.lado_esquerdo {
+  width: 45%;
+}
+.lado_direito {
+  margin-top: -28%;
+  margin-left: 60%;
+  width: 30%;
+}
+
+
+
+/* Estilo dos campos do formulário com rótulos ao lado */
+label {
+  font-size: 17px;
+  color: #000000;
+  font-weight: bold;
+  margin-right: 10px;
+  white-space: nowrap; /* Impede quebra de linha dos rótulos */
+}
+
+input[type="text"], textarea, select {
+  width: calc(100% - 150px); /* Ajuste dinâmico do tamanho dos campos */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  border-color: #000000;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Alinhamento de cada campo e rótulo */
+.campos {
+  display: flex;
+  align-items: center; /* Alinha rótulos e campos na mesma linha */
+  margin-bottom: 20px;
+}
+
+/* Estilo do botão de upload */
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Estilo para opções "Disponível" */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  height: 8%;
+  position: absolute;
+  width: 15%;
+  background-color: #BCA0E8;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 700px;
+}
+
+button:hover {
+  background-color: #9e74e0;
+}
+
+/* Ajusta alinhamento de cada seção */
+.lado_esquerdo {
+  align-items: flex-start;
+}
+
+.lado_direito {
+  align-items: flex-end;
+}
+
+/* Alinhamento horizontal para rótulos e campos */
+label.inline {
+  display: inline-block; /* Mantém os itens em linha */
+  margin-right: 15px; /* Espaçamento entre as opções */
+}
+input[type="text"], textarea, select, input[type="date"], input[type="file"] {
+  width: 90%; /* Mesma largura para todos os campos */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
