@@ -1,0 +1,46 @@
+{% extends "_master.html" %}
+{% load static %}
+{% block main %}
+
+    <form>
+      <h1>Cadastro Itens</h1>
+  
+      <label for="nome">NOME DO ITEM:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite o nome do item" required>
+  
+      <label for="descricao">DESCRIÇÃO:</label>
+      <textarea id="descricao" name="descricao" placeholder="Digite a descrição do item"></textarea>
+  
+      <label for="imagem">UPLOAD DE IMAGEM:</label>
+      <input type="file" id="imagem" name="imagem">
+  
+      <label for="estado">ESTADO DE USO:</label>
+      <select id="estado" name="estado">
+        <option value=""disabled selected>Selecione uma opção</option>
+        <option value="novo">NOVO</option>
+        <option value="usado">USADO</option>
+      </select>
+  
+      <label for="quantidade">QUANTIDADE:</label>
+      <input type="text" id="quantidade" name="quantidade" placeholder="Digite a quantidade">
+  
+      <label>DISPONÍVEL:</label>
+      <input type="radio" id="sim" name="disponivel" value="sim" checked>
+      <label for="sim">SIM</label>
+      <input type="radio" id="nao" name="disponivel" value="nao">
+      <label for="nao">NÃO</label>
+  
+      <label for="validade">VALIDADE:</label>
+      <input type="date" id="validade" name="validade">
+  
+      <label for="marca">MARCA:</label>
+      <select id="marca" name="marca">
+        <option value=""disabled selected>Selecione uma opção</option>
+        <option value="marca1">MARCA 1</option>
+        <option value="marca2">MARCA 2</option>
+      </select>
+  
+      <button type="submit">Enviar</button>
+    </form>
+
+{% endblock  %}
