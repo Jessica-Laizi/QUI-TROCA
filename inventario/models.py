@@ -21,5 +21,5 @@ class Usuario(models.Model):
     campus=models.ForeignKey(Campus, on_delete=models.CASCADE)
     status=models.CharField(max_length=50,null=False)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    
+    ingresso=models.CharField(max_length=15,null=False) 
     

@@ -1,0 +1,42 @@
+{% extends "_master.html" %}
+{% load static %}
+{% block main %}
+
+ 
+  <div class="completo">
+    <aside class="sidebar">
+      <div class="profile-section">
+        
+        <div class="foto_perfil">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        
+        <h2>{{usuario.first_name}}</h2>
+        <a href="#" class="profile-link">Meu Perfil</a>
+  </div>
+     
+      <nav class="menu">
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> ITENS DO SEU CAMPUS</a></li>
+          <li><a href="#"><i class="fa-solid fa-bookmark"></i> ITENS SALVOS</a></li>
+          <li><a href="#"><i class="fa-solid fa-flask"></i> CADASTRO DE ITENS</a></li>
+          <li><a href="#" class="sair"><i class="fa-solid fa-right-from-bracket"></i> SAIR</a></li>
+        </ul>
+      </nav>
+   
+    </aside>
+   
+   <div class="content">
+    <h2>SUA LISTA DE ITENS SALVOS </h2>
+    <div class="item">
+        <a class="no-decoration" href="{% url "details" 3 %}">
+            <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
+            <p>Becker 250 ml</p>
+            <p>Disponível para troca</p>
+        </a>
+    </div>
+     
+   </div>
+</div>
+    
+{% endblock  %}
