@@ -47,11 +47,41 @@
 
 
         <main class="container">
-            {% block main %}{% endblock main %}
+            {% block main %}
+            <script>
+                function abrirPopup() {
+                    document.getElementById("popupNegociar").style.display = "flex";
+                }
+            
+                function fecharPopup() {
+                    document.getElementById("popupNegociar").style.display = "none";
+                }
+            
+                {% comment %} function confirmarNegociacao() {
+                    let quantidade = document.getElementById("quantidade").value;
+                    if (quantidade) {
+                        alert("Você deseja negociar " + quantidade + " unidades.");
+                        fecharPopup();
+                    } else {
+                        alert("Por favor, insira uma quantidade válida.");
+                    }
+                } {% endcomment %}
+                
+
+                function confirmarNegociacao() {
+                    let quantidade = document.getElementById("quantidade").value;
+                    if (quantidade && quantidade > 0) {
+                        alert("Você deseja negociar " + quantidade + " unidades.");
+                        fecharPopup();
+                    } else {
+                        alert("Por favor, insira uma quantidade válida.");
+                    }
+                }
+                
+            </script>
+            {% endblock main %}
 
         </main>
-    {% comment %} </div> {% endcomment %}
-
 
 </body>
 
