@@ -1,65 +1,93 @@
 
-  /* Container principal */
-  form {
-    background-color: #fff;
-    width: 100%; 
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 20px;
-    color: #000000;
-  }
-  
-  /* Estilo dos campos do formulário */
-  label {
-    display: block;
-    font-size: 17px;
-    margin-bottom: 5px;
-    color:  #000000;
-    font-weight: bold;
-  }
-  
-  input[type="text"], textarea, select {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  /* Estilo do botão de upload */
-  input[type="file"] {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  /* Estilo para opções "Disponível" */
-  input[type="radio"] {
-    margin-right: 5px;
-  }
-  
- 
-  button {
-    width: 10%;
-    background-color: #BCA0E8;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #9e74e0;
-  }
+form {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 85.8vh; 
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  color: #000000;
+  width: 100%; 
+  margin-bottom: 10px;
+}
+
+.lado_esquerdo {
+  width: 45%;
+}
+
+.lado_direito {
+  margin-top: -39%;
+  margin-left: 60%;
+  width: 30%;
+}
+
+label {
+  font-size: 18px;
+  color: #000000;
+  font-weight: bold;
+  margin-right: 10px;
+  white-space: nowrap; 
+}
+
+input[type="text"], textarea, select, input[type="date"], input[type="file"] {
+  width: 90%; 
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #BCA0E8;
+  border-radius: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.campos {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 35px;  
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  height: 8%;
+  position: absolute;
+  width: 13%;
+  background-color: #BCA0E8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 700px;
+}
+
+button:hover {
+  background-color: #9e74e0;
+}
+
+.lado_esquerdo {
+  align-items: flex-start;
+}
+
+.lado_direito {
+  align-items: flex-end;
+}
+
+label.inline {
+  display: inline-block;
+  margin-right: 15px; 
+}
