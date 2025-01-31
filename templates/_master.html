@@ -7,9 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto</title>
 
+    <link rel="icon" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=experiment" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static "css/detalhes.css" %}">
     <link rel="stylesheet" href="{% static "css/perfil.css" %}">
+    <link rel="stylesheet" href="{% static "css/visual.css" %}">
+    <link rel="stylesheet" href="{% static 'css/categorias.css' %}">
+
     <link rel="stylesheet" href="{% static "css/save_item.css" %}">
     <link rel="stylesheet" href="{% static "css/pag_troca.css" %}">
 
@@ -48,11 +52,41 @@
 
 
         <main class="container">
-            {% block main %}{% endblock main %}
+            {% block main %}
+            <script>
+                function abrirPopup() {
+                    document.getElementById("popupNegociar").style.display = "flex";
+                }
+            
+                function fecharPopup() {
+                    document.getElementById("popupNegociar").style.display = "none";
+                }
+            
+                {% comment %} function confirmarNegociacao() {
+                    let quantidade = document.getElementById("quantidade").value;
+                    if (quantidade) {
+                        alert("Você deseja negociar " + quantidade + " unidades.");
+                        fecharPopup();
+                    } else {
+                        alert("Por favor, insira uma quantidade válida.");
+                    }
+                } {% endcomment %}
+                
+
+                function confirmarNegociacao() {
+                    let quantidade = document.getElementById("quantidade").value;
+                    if (quantidade && quantidade > 0) {
+                        alert("Você deseja negociar " + quantidade + " unidades.");
+                        fecharPopup();
+                    } else {
+                        alert("Por favor, insira uma quantidade válida.");
+                    }
+                }
+                
+            </script>
+            {% endblock main %}
 
         </main>
-    {% comment %} </div> {% endcomment %}
-
 
 </body>
 

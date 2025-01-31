@@ -1,3 +1,113 @@
+/* Estilizando a Pop-up */
+.popup-botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.popup-botoes button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #5c0497;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.popup-botoes button:hover {
+    background-color: #7a22c6;
+}
+
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+    margin-bottom: 15px;
+}
+
+.popup-content input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background: #5c0497;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content button:hover {
+    background: #4a0379;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+
+
+
 body {
     margin: 0;
     padding: 0;
