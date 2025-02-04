@@ -6,54 +6,69 @@
         <h1>SELECIONE POR CATEGORIA</h1>
         <div class="categorias">
             <div class="categoria">
+                <a href="{% url "categorias" "Vidarias" %}">
                 <div class="img">
 
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Vidrarias</p>
+            </a>
             </div>
             <div class="categoria">
-                
+                <a href="{% url "categorias" "Balancas" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Balanças</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Agitadores" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Agitadores</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Bombas" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Bombas</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Reagentes" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Reagentes</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Buretas" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Buretas</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Reagentes" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Reagentes</p>
+            </a>
             </div>
             <div class="categoria">
+                <a href="{% url "categorias" "Buretas" %}">
                 <div class="img">
                     <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
                 </div>
                 <p>Buretas</p>
+            </a>
             </div>
            
         </div>
@@ -87,38 +102,16 @@
     <section>
         <h2>DISPONÍVEL POR CAMPUS</h2>
         <div class="itens-disponiveis">
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
+                {% for item in listagem %}
+                    <div class="item">
+                        <a class="no-decoration" href="{% url "details" item.id %}">
+                            <img src="{% static "img/becker.webp" %}" alt="Becker 250 ml">
+                            <p>{{item.nome}}</p>
+                            <p>Disponível: {{item.disponivel}}</p>
+                        </a>
+                    </div>
+        {% endfor %}
 
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
-            
         </div>
     </section>
 </div>

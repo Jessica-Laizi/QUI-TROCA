@@ -46,42 +46,23 @@
             <div class="img">
                 <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
         </div>
+            <p>Buretas</p>
+    </div>
     </section>
 
     <section>
+        <p>{{categoria}}</p>
         <h2>ITENS DISPONÍVEIS</h2>
         <div class="itens-disponiveis">
+        {% for item in inventario %}
             <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
+                <a class="no-decoration" href="{% url "details" item.id %}">
+                    <img src="{% static "img/becker.webp" %}" alt="Becker 250 ml">
+                    <p>{{item.nome}}</p>
+                    <p>Disponível: {{item.disponivel}}</p>
                 </a>
             </div>
-
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="no-decoration" href="{% url "details" 3 %}">
-                    <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
-                    <p>Becker 250 ml</p>
-                    <p>Disponível para troca</p>
-                </a>
-            </div>
+{% endfor %}
             
         </div>
     </section>

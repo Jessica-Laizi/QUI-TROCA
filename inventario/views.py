@@ -14,6 +14,10 @@ def listagem(request):
     listagem=Inventario.objects.all()
     return render(request,  "listagem.html", {'listagem':listagem})
 
+def categorias(request,categoria):
+    inventario=Inventario.objects.all()
+    return render(request,  "categorias.html", {'inventario':inventario,'categoria':categoria})
+
 def add(request):
     return render(request, "form.html")
 
