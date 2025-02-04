@@ -29,7 +29,7 @@ urlpatterns = [
     path('inicial/', listagem, name="inicial"),
     path('details/<int:id>', details, name="details"),
     path('save_item/', save_item, name="save_item"),
-    path('pag_troca/', pag_troca, name="pag_troca"),
+    path('pag_troca/<str:info>', pag_troca, name="pag_troca"),
     
       
 ]

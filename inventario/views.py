@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Inventario, Usuario
+from inventario.models import Campus, Inventario, Usuario
 from django.conf import settings
 from pathlib import os
 
@@ -51,11 +51,28 @@ def details(request, id):
     return render(request, "detalhes.html", {"inv": inv})
 
 def save_item(request):
-    return render(request, "cadastro_itens.html")
+    if request.method == "POST":
+        data = request.POST
+        inv = Inventario()
+        inv.nome = data["nome"]
+        inv.descricao = data["descricao"]
+        inv.imagem = data["imagem"]
+        inv.estado_de_uso = data["estado_de_uso"]
+        inv.quantidade = data["quantidade"]
+        inv.disponivel = data["disponivel"]
+        inv.validade = data["validade"]
+        inv.campus_id = data["campus_id"]
+        inv.marca = data["marca"]
+        inv.save()
+    campus = Campus.objects.all()
+        
+    return render(request, "cadastro_itens.html",{"campus":campus})
 
-def pag_troca(request):
+def pag_troca(request, info):
     usuario = request.user
     inv = Usuario.objects.get(user_id=usuario.id)
-    return render(request, "pag_troca.html", {"usuario":usuario, "inv": inv})
+    # ajustar para pegar apenas os itens salvos pelo usuário
+    itens =Inventario.objects.all() 
+    return render(request, "pag_troca.html", {"usuario":usuario, "inv": inv, "itens":itens, "info":info})
     
 

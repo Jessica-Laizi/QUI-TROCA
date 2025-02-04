@@ -2,7 +2,8 @@
 {% load static %}
 {% block main %}
 
-    <form>
+    <form method = "POST" action = "{% url "save_item" %}" enctype = "multipart/form-data">
+      {% csrf_token %}
       <h1>Cadastro Itens</h1>
         <div class = "lado_esquerdo">
           <div class = "campos">
@@ -22,8 +23,8 @@
       </div> 
       <div class = "lado_direito">
         <div class = "campos">
-      <label for="estado">ESTADO DE USO:</label>
-      <select id="estado" name="estado">
+      <label for="estado_de_uso">ESTADO DE USO:</label>
+      <select id="estado_de_usoo" name="estado_de_uso">
         <option value=""disabled selected>Selecione uma opção</option>
         <option value="novo">NOVO</option>
         <option value="usado">USADO</option>
@@ -52,9 +53,14 @@
     </div>
 
     <div class = "campos">
-      <label for="campus">CAMPUS:</label>
-      <input type="text" id="campus" name="campus" placeholder="Digite o campus de origem" required>
+      <label for="campus_id">CAMPUS:</label>
+      <select name="campus_id" id="campus_id" required>
+        {% for c in campus %}
+        <option value="{{c.id}}">{{c.campus}}</option>
+        {% endfor %}
+      </select>
     </div>
+
   
     <div class = "campos">
       <label for="marca">MARCA:</label>
