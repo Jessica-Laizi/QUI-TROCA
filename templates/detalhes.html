@@ -39,7 +39,8 @@
 </div>
 <div class="detalhes-produto">
     <h1>{{inv.nome}}</h1>
-    <h1>250ml ({{inv.quantidade}}un)</h1>
+    {% comment %} <h1>250ml ({{inv.quantidade}}un)</h1> {% endcomment %}
+    <h1>({{inv.quantidade}}un)</h1>
 
 
     <div class="descricao-produto">
@@ -50,10 +51,12 @@
     </div>
 
 
-    <div class="botoes">
+<div class="botoes">
         <button>Trocar</button>
         <button>Salvar</button>
-        <button>Negociar</button>
+        {% comment %} <button>Negociar</button> {% endcomment %}
+        <button onclick="abrirPopup()">Negociar</button>
+        
     </div>
 
 
@@ -68,5 +71,42 @@
         <p>ESTADO DE USO: {{inv.estado_de_uso}}</p>
        </div>
     </div>
+
+
+    
 </div>
-{% endblock main %}
+
+<!-- Pop-up de Negociação -->
+<div id="popupNegociar" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn" onclick="fecharPopup()">&times;</span>
+        <h2>Quantas quantidades você deseja negociar?</h2>
+        <input type="number" id="quantidade" min="1" placeholder="Digite a quantidade">
+        <button onclick="confirmarNegociacao()">Confirmar</button>
+    </div>
+</div>
+
+
+<script>
+    function abrirPopup() {
+        document.getElementById("popupNegociar").style.display = "flex";
+    }
+
+    function fecharPopup() {
+        document.getElementById("popupNegociar").style.display = "none";
+    }
+
+    function confirmarNegociacao() {
+        let quantidade = document.getElementById("quantidade").value;
+        if (quantidade) {
+            alert("Você deseja negociar " + quantidade + " unidades.");
+            fecharPopup();
+        } else {
+            alert("Por favor, insira uma quantidade válida.");
+        }
+    }
+</script>
+
+{% endblock main %} 
+
+

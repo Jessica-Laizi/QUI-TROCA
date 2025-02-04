@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from inventario.views import index, add,save, show, delete, perfil, listagem, details, save_item, categorias
+from inventario.views import index, add, save, show, delete, perfil, listagem, details, save_item, pag_troca, categorias
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('inicial/', listagem, name="inicial"),
     path('details/<int:id>', details, name="details"),
     path('save_item/', save_item, name="save_item"),
+    path('pag_troca/', pag_troca, name="pag_troca"),
     path('categorias/<str:categoria>', categorias, name="categorias"),
     
       

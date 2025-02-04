@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Inventario
+from inventario.models import Inventario, Usuario
 from django.conf import settings
 from pathlib import os
 
@@ -46,7 +46,8 @@ def delete(request, id):
 
 def perfil(request):
     usuario = request.user
-    return render(request, "perfil.html", {"usuario":usuario})
+    inv = Usuario.objects.get(user_id=usuario.id)
+    return render(request, "perfil.html", {"usuario":usuario, "inv": inv})
     
         
 def details(request, id):
@@ -55,3 +56,10 @@ def details(request, id):
 
 def save_item(request):
     return render(request, "cadastro_itens.html")
+
+def pag_troca(request):
+    usuario = request.user
+    inv = Usuario.objects.get(user_id=usuario.id)
+    return render(request, "pag_troca.html", {"usuario":usuario, "inv": inv})
+    
+

@@ -11,7 +11,7 @@
           <i class="fa-solid fa-circle-user"></i>
         </div>
         
-        <h2>Victor Souza</h2>
+        <h2>{{usuario.first_name}}</h2>
         <a href="#" class="profile-link">Meu Perfil</a>
   </div>
      
@@ -34,7 +34,7 @@
 
 
         <div class = "info_user">
-          <label>{{request.user.username}}</label>
+          <label>{{usuario.first_name}}</label>
         </div>
        
         <div class="info">
@@ -45,7 +45,7 @@
 
 
         <div class = "info_user">
-        <label>2022/1</label>
+          <label>{{inv.ingresso}}</label>
         </div>
        
         <div class="info">
@@ -56,7 +56,7 @@
 
 
         <div class = "info_user">
-        <label>20221114010004</label>
+          <label>{{inv.matricula}}</label>
         </div>
        
         <div class="info">
@@ -64,7 +64,7 @@
         </div>
        
         <div class = "info_user">
-        <label>maia.victor@academico.ifrn.edu.br</label>
+          <label>{{usuario.email}}</label>
         </div>
        
         <div class="info">
@@ -75,7 +75,7 @@
 
 
         <div class = "info_user">
-        <label>Santa Cruz</label>
+        <label>{{inv.campus.campus}}</label>
         </div>
 
 
@@ -86,7 +86,7 @@
         </div>
        
         <div class = "info_user">
-        <label>Discente</label>
+          <label>{{inv.status}}</label>
         </div>
        
       </div>
