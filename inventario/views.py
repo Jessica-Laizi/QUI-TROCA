@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Inventario, Usuario
+from inventario.models import Campus, Inventario, Usuario
 from django.conf import settings
 from pathlib import os
 
@@ -12,10 +12,12 @@ def index(request):
 
 def listagem(request):
     listagem=Inventario.objects.all()
-    return render(request,  "listagem.html", {'listagem':listagem})
+    campus=Campus.objects.all()
+    return render(request,  "listagem.html", {'listagem':listagem, 'campus':campus})
+
 
 def categorias(request,categoria):
-    inventario=Inventario.objects.all()
+    inventario=Inventario.objects.filter(disponivel='sim')
     return render(request,  "categorias.html", {'inventario':inventario,'categoria':categoria})
 
 def add(request):
