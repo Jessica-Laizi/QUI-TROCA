@@ -63,16 +63,16 @@ input[type="radio"] {
 }
 
 button {
-  height: 8%;
-  position: absolute;
-  width: 13%;
+  /* height: 8%; */
+  position: relative;
+  width: 53%;
   background-color: #BCA0E8;
   color: white;
   border: none;
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
-  margin-top: 700px;
+  /* margin-top: 00px; */
 }
 
 button:hover {
