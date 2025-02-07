@@ -1,0 +1,52 @@
+{% extends "_master.html" %}
+{% load static %}
+{% block main %}
+
+    <form class = "tudo" method = "POST" action = "{% url "cadastro_usuario" %}" enctype = "multipart/form-data">
+      {% csrf_token %}
+      <h1 class = "t">Cadastro de Usuário</h1>
+   
+    <div class = "c">
+      <label for="nome">NOME COMPLETO:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite o seu nome completo" required>
+    </div>
+
+    <div class = "c">
+        <label for="matricula">MATRÍCULA:</label>
+        <input type="text" id="matricula" name="matricula" placeholder="Digite a sua matrícula" required>
+      </div>
+
+      <div class = "c">
+        <label for="ingresso">PERÍODO DE INGRESSO:</label>
+        <input type="text" id="ingresso" name="ingresso" placeholder="Digite o período do seu ingresso" required>
+      </div>
+      
+      <div class = "c">
+        <label for="campus_do_user">CAMPUS:</label>
+        <input type="text" id="campus_do_user" name="campus_do_user" placeholder="Digite o seu campus" required>
+      </div> 
+
+      <div class = "c">
+        <label>STATUS:</label>
+          <label class="inline">
+            <input type="radio" id="discente" name="status" value="discente" checked> DISCENTE
+          </label>
+          
+          <label class="inline">
+            <input type="radio" id="docente" name="status" value="docente"> DOCENTE
+          </label>
+          
+          <label class="inline">
+            <input type="radio" id="tecnico" name="status" value="tecnico"> TÉCNICO
+          </label>
+      </div>
+    
+    <div class = "c">
+      <label for="fot_perfil">ESCOLHA UMA FOTO DE PERFIL:</label>
+      <input type="file" id="fot_perfil" name="fot_perfil">
+    </div>
+
+    <div class = "botao"><button type="submit">Enviar</button></div> 
+    </form>
+
+{% endblock  %}

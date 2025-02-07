@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from inventario.models import Campus, Inventario, Usuario
 from django.conf import settings
 from pathlib import os
+from django.contrib.auth import logout 
 
 
 
@@ -46,7 +47,9 @@ def delete(request, id):
 
 def perfil(request):
     usuario = request.user
-    inv = Usuario.objects.get(user_id=usuario.id)
+    inv = Usuario.objects.filter(user_id=usuario.id)
+    if not inv:
+        return render(request, "cadastro_usuario.html")
     return render(request, "perfil.html", {"usuario":usuario, "inv": inv})
     
         
@@ -75,8 +78,15 @@ def save_item(request):
 def pag_troca(request, info):
     usuario = request.user
     inv = Usuario.objects.get(user_id=usuario.id)
-    # ajustar para pegar apenas os itens salvos pelo usuário
-    itens =Inventario.objects.all() 
+    if info=="campus":  # ajustar para pegar apenas os itens salvos pelo usuário
+        itens =Inventario.objects.filter(campus_id = inv.campus_id) 
+    else:
+        itens =Inventario.objects.all()
+    
     return render(request, "pag_troca.html", {"usuario":usuario, "inv": inv, "itens":itens, "info":info})
     
+def logout_user (request):
+    logout (request)
+    return redirect(index)
+
 

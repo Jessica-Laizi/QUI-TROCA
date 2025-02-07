@@ -1,0 +1,28 @@
+
+.tudo {
+    background-color: #fff;
+    display: inline-block;
+    width: 50%;
+    margin-left: 25%;
+  }
+
+.c{
+    display: flex;
+    align-items: center; 
+    margin-bottom: 35px;  
+  }
+
+.t{
+    padding-bottom: 50px;
+  }
+
+.c > input[type="file"]{
+    font-size: 11px;
+  }
+
+.botao>button {
+    margin-top: 1%;
+    height: 6%;
+    width: 9.74%;
+    margin-left: 9.8%;
+  }

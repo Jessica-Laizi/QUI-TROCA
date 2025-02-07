@@ -17,7 +17,7 @@
      
       <nav class="menu">
         <ul>
-          <li><a href="#"><i class="fa-solid fa-location-dot"></i> ITENS DO SEU CAMPUS</a></li>
+          <li><a href="{% url "pag_troca" "campus" %}"><i class="fa-solid fa-location-dot"></i> ITENS DO SEU CAMPUS</a></li>
           <li><a href="#"><i class="fa-solid fa-bookmark"></i> ITENS SALVOS</a>
             <ul class = "submenu">
               <li><a href="{% url "pag_troca" "salvos" %}">Salvos</a></li>
@@ -26,9 +26,8 @@
               <li><a href="{% url "pag_troca" "cancelados" %}">Cancelados</a></li>
             </ul>
           </li>
-          <li><a href="{% url "save_item" %}"><i class="fa-solid fa-flask"></i> CADASTRO DE ITENS</a>
-          </li>
-          <li><a href="#" class="sair"><i class="fa-solid fa-right-from-bracket"></i> SAIR</a></li>
+          <li><a href="{% url "save_item" %}"><i class="fa-solid fa-flask"></i> CADASTRO DE ITENS</a></li>
+          <li><a href="{% url 'logout' %}" class="sair"><i class="fa-solid fa-right-from-bracket"></i> SAIR</a></li>
         </ul>
       </nav>
    
@@ -45,6 +44,8 @@
     
     {% elif  info == "cancelados" %}
     <h2>SUA LISTA DE ITENS CANCELADOS </h2>
+    {% elif  info == "campus" %}
+    <h2>ITENS DO SEU CAMPUS</h2>
     {% endif %}
     {% for item in itens %}
     <div class="item">
