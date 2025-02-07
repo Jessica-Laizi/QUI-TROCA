@@ -23,3 +23,17 @@ class Usuario(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     ingresso=models.CharField(max_length=15,null=False) 
     
+
+class Status(models.Model):
+    status=models.CharField(max_length=50,null=False)
+
+class Solicitacao(models.Model):
+    quantidade=models.CharField(max_length=15,null=False)    
+    status=models.ForeignKey(Status, on_delete=models.CASCADE)
+    item=models.ForeignKey(Inventario, on_delete=models.CASCADE)
+    solicitante=models.ForeignKey(User,on_delete=models.CASCADE)
+    avaliador=models.ForeignKey(User,on_delete=models.CASCADE)
+    campus_origem=models.ForeignKey(Campus, on_delete=models.CASCADE)
+    campus_destino=models.ForeignKey(Campus, on_delete=models.CASCADE)
+
+

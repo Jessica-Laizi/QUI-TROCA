@@ -77,15 +77,16 @@
     <section>
         <h2>SELECIONE POR CAMPUS</h2>
         <div class="campus-container">
-            <div class="campus">
+                {% for c in campus %} 
+                <div class="campus">
                 <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
+                <span>{{c.campus}}</span>
+            </div>
+    {% endfor %}
+                {% comment %} <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
                 <span>Santa Cruz</span>
             </div>
                 
-            <div class="campus">
-                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
-                <span>Apodi</span>
-            </div>
             <div class="campus">
                 <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
                 <span>Parnamirim</span>
@@ -94,7 +95,7 @@
             <div class="campus">
                 <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
                 <span>Lajes<span>
-            </div>
+            </div> {% endcomment %}
             
         </div>
     </section>
