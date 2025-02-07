@@ -79,6 +79,7 @@
   
 
   .item {
+    display: inline-block;
     background-color: #9779eb8e;
     padding: 20px;
     text-align: center;
@@ -102,4 +103,12 @@
 
 .item p {
     margin-bottom: 5px;
+}
+.submenu{ 
+  display: none;
+  color: black;
+  font-weight: bold;
+}
+.menu > ul > li:hover .submenu{
+  display: block;
 }
