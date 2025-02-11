@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Campus, Inventario, Usuario
+from inventario.models import Campus, Categoria, Inventario, Usuario
 from django.conf import settings
 from pathlib import os
 from django.contrib.auth import logout 
@@ -14,12 +14,14 @@ def index(request):
 def listagem(request):
     listagem=Inventario.objects.all()
     campus=Campus.objects.all()
-    return render(request,  "listagem.html", {'listagem':listagem, 'campus':campus})
+    categorias=Categoria.objects.all()
+    return render(request, "listagem.html", {'listagem':listagem, 'campus':campus, 'categorias':categorias})
 
 
 def categorias(request,categoria):
-    inventario=Inventario.objects.filter(disponivel='sim')
-    return render(request,  "categorias.html", {'inventario':inventario,'categoria':categoria})
+    inventario=Inventario.objects.filter(disponivel='sim', categoria_id=categoria)
+    categorias=Categoria.objects.all()
+    return render(request,  "categorias.html", {'inventario':inventario,'categorias':categorias})
 
 def add(request):
     return render(request, "form.html")
