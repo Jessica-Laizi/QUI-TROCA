@@ -60,8 +60,8 @@ section h2 {
 .campus-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    /* flex-wrap: wrap; */
 }
 
 .campus {
@@ -102,12 +102,20 @@ section h2 {
     background-color: #58a658;
 }
 
-.itens-disponiveis {
+/* .itens-disponiveis {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+} */
+.itens-disponiveis {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
+
 
 .item {
     background-color: #9779eb8e;
