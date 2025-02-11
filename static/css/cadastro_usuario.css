@@ -19,10 +19,15 @@
 .c > input[type="file"]{
     font-size: 11px;
   }
-
 .botao>button {
-    margin-top: 1%;
-    height: 6%;
-    width: 9.74%;
-    margin-left: 9.8%;
+  position: relative;
+  width: 30%;
+  height: 60px;
+  background-color: #BCA0E8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 30%;
   }

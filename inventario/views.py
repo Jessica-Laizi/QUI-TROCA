@@ -51,8 +51,8 @@ def perfil(request):
     usuario = request.user
     inv = Usuario.objects.filter(user_id=usuario.id)
     if not inv:
-        return render(request, "cadastro_usuario.html")
-    return render(request, "perfil.html", {"usuario":usuario, "inv": inv})
+        return redirect(cadastro_usuario)
+    return render(request, "perfil.html", {"usuario":usuario, "inv": inv[0]})
     
         
 def details(request, id):
@@ -90,5 +90,24 @@ def pag_troca(request, info):
 def logout_user (request):
     logout (request)
     return redirect(index)
+
+def cadastro_usuario(request):
+    if request.method == "POST":
+        data = request.POST
+        inv = Usuario()
+        
+        inv.matricula = data["matricula"]
+        inv.ingresso = data["ingresso"]
+        inv.campus_id = data["campus_id"]
+        inv.status = data["status"]
+        inv.user_id = request.user.id
+        inv.save()
+        request.user.first_name = data["nome"]
+        request.user.save()
+        return redirect (perfil)
+    campus = Campus.objects.all()
+    
+    return render(request, "cadastro_usuario.html", {"campus":campus})
+
 
 
