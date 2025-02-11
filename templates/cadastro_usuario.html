@@ -21,11 +21,18 @@
         <input type="text" id="ingresso" name="ingresso" placeholder="Digite o período do seu ingresso" required>
       </div>
       
+      {% comment %} <div class = "c">
+        <label for="campus_id">CAMPUS:</label>
+        <input type="text" id="campus_id" name="campus_id" placeholder="Digite o seu campus" required>
+      </div>  {% endcomment %}
       <div class = "c">
-        <label for="campus_do_user">CAMPUS:</label>
-        <input type="text" id="campus_do_user" name="campus_do_user" placeholder="Digite o seu campus" required>
-      </div> 
-
+        <label for="campus_id">CAMPUS:</label>
+        <select name="campus_id" id="campus_id" required>
+          {% for c in campus %}
+          <option value="{{c.id}}">{{c.campus}}</option>
+          {% endfor %}
+        </select>
+      </div>
       <div class = "c">
         <label>STATUS:</label>
           <label class="inline">

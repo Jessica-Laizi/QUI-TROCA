@@ -17,12 +17,14 @@ h1 {
 
 .lado_esquerdo {
   width: 45%;
+  align-items: flex-start;
 }
 
 .lado_direito {
-  margin-top: -38%;
+  margin-top: -34%;
   margin-left: 60%;
   width: 30%;
+  align-items: flex-end;
 }
 
 label {
@@ -63,28 +65,19 @@ input[type="radio"] {
 }
 
 button {
-  /* height: 8%; */
   position: relative;
-  width: 53%;
+  width: 15%;
+  height: 7%;
   background-color: #BCA0E8;
   color: white;
   border: none;
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
-  /* margin-top: 00px; */
 }
 
 button:hover {
   background-color: #9e74e0;
-}
-
-.lado_esquerdo {
-  align-items: flex-start;
-}
-
-.lado_direito {
-  align-items: flex-end;
 }
 
 label.inline {

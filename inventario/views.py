@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Campus, Inventario, Solicitacao, Usuario
+from inventario.models import Campus, Inventario, Solicitacao, Usuario, Categoria
 from django.conf import settings
 from pathlib import os
 from django.contrib.auth import logout 
@@ -14,12 +14,14 @@ def index(request):
 def listagem(request):
     listagem=Inventario.objects.all()
     campus=Campus.objects.all()
-    return render(request,  "listagem.html", {'listagem':listagem, 'campus':campus})
+    categorias=Categoria.objects.all()
+    return render(request, "listagem.html", {'listagem':listagem, 'campus':campus, 'categorias':categorias})
 
 
 def categorias(request,categoria):
-    inventario=Inventario.objects.filter(disponivel='sim')
-    return render(request,  "categorias.html", {'inventario':inventario,'categoria':categoria})
+    inventario=Inventario.objects.filter(disponivel='sim', categoria_id=categoria)
+    categorias=Categoria.objects.all()
+    return render(request,  "categorias.html", {'inventario':inventario,'categorias':categorias})
 
 def add(request):
     return render(request, "form.html")
@@ -51,8 +53,8 @@ def perfil(request):
     usuario = request.user
     inv = Usuario.objects.filter(user_id=usuario.id)
     if not inv:
-        return render(request, "cadastro_usuario.html")
-    return render(request, "perfil.html", {"usuario":usuario, "inv": inv})
+        return redirect(cadastro_usuario)
+    return render(request, "perfil.html", {"usuario":usuario, "inv": inv[0]})
     
         
 def details(request, id):
@@ -103,5 +105,24 @@ def pag_troca(request, info):
 def logout_user (request):
     logout (request)
     return redirect(index)
+
+def cadastro_usuario(request):
+    if request.method == "POST":
+        data = request.POST
+        inv = Usuario()
+        
+        inv.matricula = data["matricula"]
+        inv.ingresso = data["ingresso"]
+        inv.campus_id = data["campus_id"]
+        inv.status = data["status"]
+        inv.user_id = request.user.id
+        inv.save()
+        request.user.first_name = data["nome"]
+        request.user.save()
+        return redirect (perfil)
+    campus = Campus.objects.all()
+    
+    return render(request, "cadastro_usuario.html", {"campus":campus})
+
 
 
