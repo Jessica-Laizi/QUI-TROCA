@@ -4,7 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Campus(models.Model): 
     campus=models.CharField(max_length=50,null=False)
-     
+
+class Categoria(models.Model):
+    nome=models.CharField(max_length=50,null=False)
+    
 class Inventario(models.Model):
     nome=models.CharField(max_length=50,null=False)
     validade=models.DateField(null=True)
@@ -15,6 +18,7 @@ class Inventario(models.Model):
     estado_de_uso=models.CharField(max_length=50,null=False)
     imagem=models.CharField(max_length=100,null=True)
     campus=models.ForeignKey(Campus, on_delete=models.CASCADE)
+    categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
     
 class Usuario(models.Model):
     matricula=models.CharField(max_length=15,null=False)    

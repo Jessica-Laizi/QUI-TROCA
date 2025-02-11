@@ -5,7 +5,18 @@
     <section>
         <h1>SELECIONE POR CATEGORIA</h1>
         <div class="categorias">
+            {% for cat in categorias %}
             <div class="categoria">
+                <a href="{% url "categorias" cat.id %}">
+                <div class="img">
+
+                    <img src="{% static "img/iconbecker.png" alt="cat.nome" %}">
+                </div>
+                <p>{{cat.nome}}</p>
+            </a>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="categoria">
                 <a href="{% url "categorias" "Vidarias" %}">
                 <div class="img">
 
@@ -69,7 +80,7 @@
                 </div>
                 <p>Buretas</p>
             </a>
-            </div>
+            </div> {% endcomment %}
            
         </div>
     </section>
