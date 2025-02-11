@@ -36,7 +36,7 @@ class Solicitacao(models.Model):
     status=models.ForeignKey(Status, on_delete=models.CASCADE)
     item=models.ForeignKey(Inventario, on_delete=models.CASCADE)
     solicitante=models.ForeignKey(User,on_delete=models.CASCADE, related_name='user_solicitante')
-    avaliador=models.ForeignKey(User,on_delete=models.CASCADE, related_name='user_avaliador')
+    avaliador=models.ForeignKey(User,on_delete=models.CASCADE, null=True, related_name='user_avaliador')
     campus_origem=models.ForeignKey(Campus, on_delete=models.CASCADE, related_name='campus_origem')
     campus_destino=models.ForeignKey(Campus, on_delete=models.CASCADE, related_name='campus_destino')
 

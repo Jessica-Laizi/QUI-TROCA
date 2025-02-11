@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from inventario.models import Campus, Categoria, Inventario, Usuario
+from inventario.models import Campus, Inventario, Solicitacao, Usuario, Categoria
 from django.conf import settings
 from pathlib import os
 from django.contrib.auth import logout 
@@ -53,11 +53,24 @@ def perfil(request):
     usuario = request.user
     inv = Usuario.objects.filter(user_id=usuario.id)
     if not inv:
-        return render(request, "cadastro_usuario.html")
-    return render(request, "perfil.html", {"usuario":usuario, "inv": inv})
+        return redirect(cadastro_usuario)
+    return render(request, "perfil.html", {"usuario":usuario, "inv": inv[0]})
     
         
 def details(request, id):
+    if request.method=="POST":
+        data = request.POST
+        inv=Inventario.objects.get(pk=data["item_id"])
+        user=Usuario.objects.get(user_id= request.user.id)
+        s= Solicitacao() 
+        s.quantidade = data["quantidade"]
+        s.campus_destino_id = user.campus_id
+        s.campus_origem_id = inv.campus_id
+        s.item_id = inv.id
+        s.solicitante_id = user.user_id
+        s.status_id = 1 #rever como pegar as informações do banco
+        s.save()
+        return redirect(pag_troca, "andamento")
     inv=Inventario.objects.get(pk=id)
     return render(request, "detalhes.html", {"inv": inv})
 
@@ -92,5 +105,24 @@ def pag_troca(request, info):
 def logout_user (request):
     logout (request)
     return redirect(index)
+
+def cadastro_usuario(request):
+    if request.method == "POST":
+        data = request.POST
+        inv = Usuario()
+        
+        inv.matricula = data["matricula"]
+        inv.ingresso = data["ingresso"]
+        inv.campus_id = data["campus_id"]
+        inv.status = data["status"]
+        inv.user_id = request.user.id
+        inv.save()
+        request.user.first_name = data["nome"]
+        request.user.save()
+        return redirect (perfil)
+    campus = Campus.objects.all()
+    
+    return render(request, "cadastro_usuario.html", {"campus":campus})
+
 
 
