@@ -20,10 +20,11 @@
           <li><a href="{% url "pag_troca" "campus" %}"><i class="fa-solid fa-location-dot"></i> ITENS DO SEU CAMPUS</a></li>
           <li><a href="#"><i class="fa-solid fa-bookmark"></i> ITENS SALVOS</a>
             <ul class = "submenu">
-              <li><a href="{% url "pag_troca" "salvos" %}">Salvos</a></li>
+              <li><a href="{% url "pag_troca" "salvo" %}">Salvo</a></li>
+              <li><a href="{% url "pag_troca" "pendente" %}">Pendente</a></li>
               <li><a href="{% url "pag_troca" "andamento" %}">Andamento</a></li>
-              <li><a href="{% url "pag_troca" "pendentes" %}">Pendentes</a></li>
-              <li><a href="{% url "pag_troca" "cancelados" %}">Cancelados</a></li>
+              <li><a href="{% url "pag_troca" "concluido" %}">Concluído</a></li>
+              <li><a href="{% url "pag_troca" "cancelado" %}">Cancelado</a></li>
             </ul>
           </li>
           <li><a href="{% url "save_item" %}"><i class="fa-solid fa-flask"></i> CADASTRO DE ITENS</a></li>
@@ -34,16 +35,21 @@
     </aside>
    
    <div class="content">
-    {% if info == "salvos" %}
+    {% if info == "salvo" %}
     <h2>SUA LISTA DE ITENS SALVOS </h2>
-    {% elif  info == "andamento" %}
-    <h2>SUA LISTA DE ITENS EM ANDAMENTO </h2>
-   
-    {% elif  info == "pendentes" %}
-    <h2>SUA LISTA DE ITENS PENDENTES </h2>
+
+    {% elif  info == "pendente" %}
+    <h2>SUA LISTA DE TROCAS PENDENTES </h2>
     
-    {% elif  info == "cancelados" %}
-    <h2>SUA LISTA DE ITENS CANCELADOS </h2>
+    {% elif  info == "andamento" %}
+    <h2>SUA LISTA DE TROCAS EM ANDAMENTO </h2>
+
+    {% elif  info == "concluido" %}
+    <h2>SUA LISTA DE TROCAS COCLUÍDAS </h2>
+    
+    {% elif  info == "cancelado" %}
+    <h2>SUA LISTA DE TROCAS CANCELADAS </h2>
+
     {% elif  info == "campus" %}
     <h2>ITENS DO SEU CAMPUS</h2>
     {% endif %}
@@ -54,6 +60,12 @@
             <p>{{item.nome}}</p>
             <p>{{item.disponivel}}</p>
         </a>
+        {% if info == "pendente" %}
+        <div class= "aceitar_recusar">
+          <div class="aceitar"><a href="{% url 'solicitacao' item.id 5 %}"><i class="fa-solid fa-check"></i></a></div>
+          <div class="recusar"><a href="{% url 'solicitacao' item.id 2 %}"><i class="fa-solid fa-x"></i></a></div>
+       </div>   
+        {% endif %}
     </div>
     {% endfor %}
      

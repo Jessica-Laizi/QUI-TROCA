@@ -4,7 +4,8 @@ form {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  min-height: 85.8vh; 
+  /* height: 50%;
+  min-height: 85.8vh;  */
 }
 
 h1 {
