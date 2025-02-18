@@ -2,9 +2,11 @@
 {% load static %}
 {% block main %}
 <div>
-    <section>
+    <section class="container">
         <h2>SELECIONE POR CATEGORIA</h2>
-        <div class="categorias">
+        <div class="scroll-wrapper">
+           
+            <div class="scroll-container categorias" id="categorias">
             {% for cat in categorias %}
             <div class="categoria">
                 <a href="{% url "categorias" cat.id %}">
@@ -16,77 +18,13 @@
             </a>
             </div>
             {% endfor %}
-            {% comment %} <div class="categoria">
-                <a href="{% url "categorias" "Vidarias" %}">
-                <div class="img">
-
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Vidrarias</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Balancas" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Balanças</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Agitadores" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Agitadores</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Bombas" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Bombas</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Reagentes" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Reagentes</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Buretas" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Buretas</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Reagentes" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Reagentes</p>
-            </a>
-            </div>
-            <div class="categoria">
-                <a href="{% url "categorias" "Buretas" %}">
-                <div class="img">
-                    <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-                </div>
-                <p>Buretas</p>
-            </a>
-            </div> {% endcomment %}
-           
         </div>
+    </div>
     </section>
 
-    <section>
+    <section class="container">
         <h2>SELECIONE POR CAMPUS</h2>
+        
         <div class="campus-container">
                 {% for c in campus %} 
                 <div class="campus">
@@ -94,20 +32,6 @@
                 <span>{{c.campus}}</span>
             </div>
     {% endfor %}
-                {% comment %} <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
-                <span>Santa Cruz</span>
-            </div>
-                
-            <div class="campus">
-                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
-                <span>Parnamirim</span>
-            </div>
-
-            <div class="campus">
-                <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
-                <span>Lajes<span>
-            </div> {% endcomment %}
-            
         </div>
     </section>
 
