@@ -112,3 +112,21 @@
 .menu > ul > li:hover .submenu{
   display: block;
 }
+.aceitar{
+  margin-right: 80px;
+  font-size: 23px; 
+}
+.aceitar>a{
+  color: green; 
+}
+.recusar{
+  margin-top: -27px;
+  margin-left: 80px;
+  font-size: 23px; 
+}
+.recusar>a{
+  color: red;
+}
+.aceitar_recusar{
+  margin-top: -6px;
+}
