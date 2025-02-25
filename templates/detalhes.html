@@ -8,6 +8,7 @@
             <img src={{inv.imagem}}>
             {% comment %} <img src="{% static "img/recipiente.png" %}" alt="icon.png"> {% endcomment %}
             <img src={{inv.imagem}}>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </div>
 
 
@@ -30,7 +31,7 @@
 
         <div class="quantidades-disp">
             <p>QUANTIDADES DISPONÍVEIS</p>
-            <span>{{inv.quantidade}}</span>
+            <span id="qtd_disp">{{inv.quantidade}}</span>
         </div>
     </div>
 
@@ -79,7 +80,7 @@
 
 <div id="popupNegociar" class="popup-container">
     <span class="close-btn" onclick="fecharPopup()">&times;</span>
-    <form class="popup-content" method="POST" action="{% url "details" 1 %}">
+    <form class="popup-content" method="POST" action="{% url "details" 1 %}" onsubmit="return confirmarNegociacao()">
         {% csrf_token %}
         <label for="quantidade">Quantas quantidades você deseja negociar?</label>
         <input type="number" id="quantidade" min="1" placeholder="Digite a quantidade" name="quantidade">
@@ -90,6 +91,8 @@
 
 
 <script>
+    
+
     function abrirPopup() {
         document.getElementById("popupNegociar").style.display = "block";
     }
@@ -99,12 +102,11 @@
     }
 
     function confirmarNegociacao() {
-        let quantidade = document.getElementById("quantidade").value;
-        if (quantidade) {
-            alert("Você deseja negociar " + quantidade + " unidades.");
-            fecharPopup();
-        } else {
+        let quantidade = parseInt(document.getElementById("quantidade").value);
+        let qtd_disp= parseInt(document.getElementById("qtd_disp").innerHTML);
+        if (quantidade > qtd_disp) {
             alert("Por favor, insira uma quantidade válida.");
+            return false;
         }
     }
 </script>
