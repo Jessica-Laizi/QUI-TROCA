@@ -67,9 +67,9 @@ def details(request, id):
         s.campus_origem_id = inv.campus_id
         s.item_id = inv.id
         s.solicitante_id = user.user_id
-        s.status_id = 1 #rever como pegar as informações do banco
+        s.status_id = id #rever como pegar as informações do banco
         s.save()
-        return redirect(pag_troca, "andamento")
+        return redirect(pag_troca, "pendente")
     inv=Inventario.objects.get(pk=id)
     return render(request, "detalhes.html", {"inv": inv})
 

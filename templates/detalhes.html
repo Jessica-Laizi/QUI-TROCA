@@ -54,7 +54,12 @@
 
 <div class="botoes">
         {% comment %} <button>Trocar</button> {% endcomment %}
+        <form action="{% url "details" 1 %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="item_id" value="{{inv.id}}">
+            <input type="hidden" name="quantidade" value="0">
         <button>Salvar</button>
+    </form>
         {% comment %} <button>Negociar</button> {% endcomment %}
         <button onclick="abrirPopup()">Negociar</button>
         
@@ -80,7 +85,7 @@
 
 <div id="popupNegociar" class="popup-container">
     <span class="close-btn" onclick="fecharPopup()">&times;</span>
-    <form class="popup-content" method="POST" action="{% url "details" 1 %}" onsubmit="return confirmarNegociacao()">
+    <form class="popup-content" method="POST" action="{% url "details" 2 %}" onsubmit="return confirmarNegociacao()">
         {% csrf_token %}
         <label for="quantidade">Quantas quantidades você deseja negociar?</label>
         <input type="number" id="quantidade" min="1" placeholder="Digite a quantidade" name="quantidade">
