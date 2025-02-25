@@ -1,7 +1,7 @@
 {% extends "_master.html" %}
 {% load static %}
 {% block main %}
-<div>
+<div class="main-container">
     <section class="container">
         <h2>SELECIONE POR CATEGORIA</h2>
         <div class="scroll-wrapper">
@@ -9,6 +9,7 @@
             <div class="scroll-container categorias" id="categorias">
             {% for cat in categorias %}
             <div class="categoria">
+
                 <a href="{% url "categorias" cat.id %}">
                 <div class="img">
 
@@ -24,8 +25,9 @@
 
     <section class="container">
         <h2>SELECIONE POR CAMPUS</h2>
+        <div class="scroll-wrapper">
         
-        <div class="campus-container">
+        <div class="scroll-container campus-container">
                 {% for c in campus %} 
                 <div class="campus">
                 <img src="{% static "img/campusc.png" alt="SantaCruz" %}">
@@ -33,9 +35,10 @@
             </div>
     {% endfor %}
         </div>
+    </div>
     </section>
 
-    <section>
+    <section class="container">
         <h2>DISPONÍVEL POR CAMPUS</h2>
         <div class="itens-disponiveis">
                 {% for item in listagem %}
