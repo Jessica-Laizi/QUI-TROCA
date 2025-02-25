@@ -130,3 +130,12 @@
 .aceitar_recusar{
   margin-top: -6px;
 }
+.conf_receb a {
+  color: #6a0dad; 
+  font-size: 15px;
+  text-decoration: none;
+}
+.conf_receb a:hover {
+  text-decoration: underline; 
+}
+

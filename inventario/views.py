@@ -5,7 +5,6 @@ from pathlib import os
 from django.contrib.auth import logout 
 import numpy as np
 
-
 # Create your views here.
 
 def index(request):
@@ -81,7 +80,7 @@ def atualiza_solicitacao(request, id, status):
     s.status_id = status #rever como pegar as informações do banco
     s.save()
     
-    return redirect(pag_troca, "andamento")
+    return redirect(pag_troca, "pendente")
     
 
 def save_item(request):
@@ -109,23 +108,23 @@ def pag_troca(request, info):
         itens =Inventario.objects.filter(campus_id = inv.campus_id) 
     elif info == "andamento":
         # itens =Inventario.objects.all()
-        s =Solicitacao.objects.values_list("item_id").filter(status_id = 1, solicitante_id = usuario.id)
+        s = Solicitacao.objects.values_list("item_id").filter(status_id=3, solicitante_id=usuario.id) | Solicitacao.objects.values_list("item_id").filter( status_id=3, avaliador_id=usuario.id) 
         itens_id = np.asarray(list(s))
         itens  =Inventario.objects.filter(pk__in = itens_id)
     elif info == "pendente":
         # itens =Inventario.objects.all()
-        s =Solicitacao.objects.values_list("item_id").filter(status_id = 5, solicitante_id = usuario.id)
+        s =Solicitacao.objects.values_list("item_id").filter(status_id = 2, solicitante_id = usuario.id) | Solicitacao.objects.values_list("item_id").filter( status_id=2, campus_origem_id = inv.campus_id)
         itens_id = np.asarray(list(s))
         itens  =Inventario.objects.filter(pk__in = itens_id)
       
     elif info == "cancelado":
         # itens =Inventario.objects.all()
-        s =Solicitacao.objects.values_list("item_id").filter(status_id = 2, solicitante_id = usuario.id)
+        s =Solicitacao.objects.values_list("item_id").filter(status_id = 5, solicitante_id = usuario.id)
         itens_id = np.asarray(list(s))
         itens  =Inventario.objects.filter(pk__in = itens_id)
     elif info == "salvo":
         # itens =Inventario.objects.all()
-        s =Solicitacao.objects.values_list("item_id").filter(status_id = 3, solicitante_id = usuario.id)
+        s =Solicitacao.objects.values_list("item_id").filter(status_id = 1, solicitante_id = usuario.id)
         itens_id = np.asarray(list(s))
         itens  =Inventario.objects.filter(pk__in = itens_id)
     elif info == "concluido":

@@ -12,7 +12,7 @@
         </div>
         
         <h2>{{usuario.first_name}}</h2>
-        <a href="#" class="profile-link">Meu Perfil</a>
+        <a href="{% url "perfil" %}" class="profile-link">Meu Perfil</a>
   </div>
      
       <nav class="menu">
@@ -62,9 +62,16 @@
         </a>
         {% if info == "pendente" %}
         <div class= "aceitar_recusar">
-          <div class="aceitar"><a href="{% url 'solicitacao' item.id 5 %}"><i class="fa-solid fa-check"></i></a></div>
-          <div class="recusar"><a href="{% url 'solicitacao' item.id 2 %}"><i class="fa-solid fa-x"></i></a></div>
+          <div class="aceitar"><a href="{% url 'solicitacao' item.id 3 %}"><i class="fa-solid fa-check"></i></a></div>
+          <div class="recusar"><a href="{% url 'solicitacao' item.id 5 %}"><i class="fa-solid fa-x"></i></a></div>
        </div>   
+        {% endif %}
+        {% if info == "andamento" %}
+          {% if inv.campus_id != item.campus_id %}
+              <div class="conf_receb">
+                  <a href="{% url 'solicitacao' item.id 4 %}">confirmar recebimento</a>
+              </div>
+          {% endif %}
         {% endif %}
     </div>
     {% endfor %}
