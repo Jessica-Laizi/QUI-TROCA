@@ -45,7 +45,7 @@
     <h2>SUA LISTA DE TROCAS EM ANDAMENTO </h2>
 
     {% elif  info == "concluido" %}
-    <h2>SUA LISTA DE TROCAS COCLUÍDAS </h2>
+    <h2>SUA LISTA DE TROCAS CONCLUÍDAS </h2>
     
     {% elif  info == "cancelado" %}
     <h2>SUA LISTA DE TROCAS CANCELADAS </h2>
@@ -55,7 +55,7 @@
     {% endif %}
     {% for item in itens %}
     <div class="item">
-        <a class="no-decoration" href="{% url "details" 3 %}">
+        <a class="no-decoration" href="{% url "details" item.id %}">
             <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
             <p>{{item.nome}}</p>
             <p>{{item.disponivel}}</p>
