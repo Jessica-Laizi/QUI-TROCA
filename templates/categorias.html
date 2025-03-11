@@ -2,64 +2,26 @@
 {% load static %}
 {% block main %}
 
-<div>
-<section>
-    <h2>SELECIONE POR CATEGORIA</h2>
-    <div class="categorias">
-        {% for cat in categorias %}
-        <div class="categoria">
-            <a href="{% url "categorias" cat.id %}">
-            <div class="img">
+<div class="main-container">
+    <section class="container">
+        <h2>SELECIONE POR CATEGORIA</h2>
+        <div class="scroll-wrapper">
+           
+            <div class="scroll-container categorias" id="categorias">
+            {% for cat in categorias %}
+            <div class="categoria">
 
-                <img src="{% static "img/iconbecker.png" alt="cat.nome" %}">
+                <a href="{% url "categorias" cat.id %}">
+                <div class="img">
+
+                    <img src="{% static "img/iconbecker.png" alt="cat.nome" %}">
+                </div>
+                <p>{{cat.nome}}</p>
+            </a>
             </div>
-            <p>{{cat.nome}}</p>
-        </a>
+            {% endfor %}
         </div>
-        {% endfor %}
-            {% comment %} <div class="categorias">
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Vidrarias</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Balanças</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Agitadores</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Bombas</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Reagentes</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-            </div>
-            <p>Buretas</p>
-        </div>
-        <div class="categoria">
-            <div class="img">
-                <img src="{% static "img/iconbecker.png" alt="Vidrarias" %}">
-        </div>
-            <p>Buretas</p>
-    </div> {% endcomment %}
+    </div>
     </section>
 
     <section>
