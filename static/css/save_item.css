@@ -13,7 +13,8 @@ h1 {
   font-size: 45px;
   color: #000000;
   width: 100%; 
-  margin-top: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .lado_esquerdo {
@@ -22,7 +23,7 @@ h1 {
 }
 
 .lado_direito {
-  margin-top: -34%;
+  margin-top: -30.4%;
   margin-left: 60%;
   width: 30%;
   align-items: flex-end;
@@ -75,6 +76,8 @@ button {
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
+  display: block; /* Faz o botão se comportar como um bloco */
+  margin: 30px auto; /* Centraliza horizontalmente */
 }
 
 button:hover {

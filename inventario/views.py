@@ -96,6 +96,7 @@ def save_item(request):
         inv.validade = data["validade"]
         inv.campus_id = data["campus_id"]
         inv.marca = data["marca"]
+        inv.categoria_id =1
         inv.save()
     campus = Campus.objects.all()
         

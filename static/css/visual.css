@@ -155,3 +155,23 @@ section h2 {
     white-space: nowrap;
   
 }
+footer {
+    border-top: 3px solid #029357; /* Adiciona uma linha verde no topo */
+    background-color: white;
+    color: #000000;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 64.4%;
+    display: flex; 
+    margin-left: 331px; 
+   
+    align-items:center;
+  }
+  ul{
+    list-style: none;
+    margin-left: 150px; 
+  }
+
+
+
