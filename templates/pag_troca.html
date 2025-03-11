@@ -55,7 +55,7 @@
     {% endif %}
     {% for item in itens %}
     <div class="item">
-        <a class="no-decoration" href="{% url "details" 3 %}">
+        <a class="no-decoration" href="{% url "details" item.id %}">
             <img src="{% static "img/becker.webp" alt="Becker 250 ml" %}">
             <p>{{item.nome}}</p>
             <p>{{item.disponivel}}</p>
