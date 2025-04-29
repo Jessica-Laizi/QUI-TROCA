@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from inventario.models import Campus, Inventario, Solicitacao, Usuario, Categoria
 from django.conf import settings
-from pathlib import os
+import os
 from django.contrib.auth import logout 
 import numpy as np
 
